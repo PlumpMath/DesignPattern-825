@@ -1,4 +1,4 @@
-# DesginPattern
+# Design Pattern
 Overview of design patter of the "Gang of four"
 
 Design patterns represent the best practices used by experienced object-oriented software developers.
