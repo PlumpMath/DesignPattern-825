@@ -12,9 +12,6 @@ also known as **The Gang of Four**.
 
 Patterns are divided in three purposes, each one splitted in two scopes
 
-1.Creational
-    1.Factory method
-    2.Abstract factory
-    3.builder
-    4.prototype
-    5.singleton
+####Creational
+Creational design patterns are used to instantiate objects while hiding the creation logic, using **new** operator.
+This idea give possibility to decide which objects need to be create for selected use case.
