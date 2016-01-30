@@ -1,17 +1,11 @@
 #Factory Method
 
-Define an interface for creating an object, but let subclasses decide which class to instantiate.<br>
-Hide creation logic to client and by a Factory class it create objects.<br>
-There are entities that grant the division of **responsability** and code **reusability**.
+Creates objects hiding the instantiation logic to the client.<br>
+refers to the newly created object through a common interface.<br>
 
-###Implementation
+Factory have **responsability** of object instantiation and also improve code **reusability**.
 
-This pattern utilize an interface and specialization classes, that implements the general interface.
-
-- [ ] Create interface
-- [ ] Create concrete classes that implement interface
-- [ ] Create factory class used to instantiate objects of concrete classes
-- [ ] Create client class
+###Switch implementation
 
 Canvas interface provides to concrete classes its behaviour, in this case provide **createCanvas()**.<br>
 ScreenCanvas and PrinterCanvas are concrete classes, so override **createCanvas()**.

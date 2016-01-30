@@ -50,5 +50,4 @@ class CanvasFactory{
         else
             return null;
     }
-
 }
