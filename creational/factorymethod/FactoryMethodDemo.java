@@ -6,8 +6,6 @@ public class FactoryMethodClient{
         CanvasFactory canvasFactory = new CanvasFactory();
         Canvas canvas;
 
-
-        //get an object of Circle and call its draw method.
         canvas = canvasFactory.getCanvas("screen");
         canvas.createCanvas();
 
@@ -16,7 +14,6 @@ public class FactoryMethodClient{
     }
 }
 
-//Shape interface
 interface Canvas {
    void createCanvas();
 }
