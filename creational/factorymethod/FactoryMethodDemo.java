@@ -1,71 +1,57 @@
-public class FactoryMethodDemo{
+
+public class FactoryMethodClient{
 
     public static void main(String[] args) {
 
-        ShapeFactory shapeFactory = new ShapeFactory();
+        CanvasFactory canvasFactory = new CanvasFactory();
+        Canvas canvas;
+
 
         //get an object of Circle and call its draw method.
-        Shape shape1 = shapeFactory.getShape("CIRCLE");
-        shape1.draw();
+        canvas = canvasFactory.getCanvas("screen");
+        canvas.createCanvas();
 
-        //get an object of Rectangle and call its draw method.
-        Shape shape2 = shapeFactory.getShape("RECTANGLE");
-        shape2.draw();
-
-        //get an object of Square and call its draw method.
-        Shape shape3 = shapeFactory.getShape("SQUARE");
-        shape3.draw();
+        canvas = canvasFactory.getCanvas("printer");
+        canvas.createCanvas();
     }
 }
 
 //Shape interface
-interface Shape {
-   void draw();
+interface Canvas {
+   void createCanvas();
 }
 
-//classes that implement Shape interface
-class Rectangle implements Shape{
+class ScreenCanvas implements Canvas{
 
     @Override
-    public void draw(){
-
-        System.out.println("Inside Rectangle::draw() method.");
+    public void createCanvas(){
+        System.out.println("CreateCanvas()::ScreenCanvas");
     }
 }
 
-class Circle implements Shape{
+class PrinterCanvas implements Canvas{
 
     @Override
-    public void draw(){
-        System.out.println("Inside Circle::draw() method.");
+    public void createCanvas(){
+        System.out.println("CreateCanvas()::PrinterCanvas");
     }
 }
 
-class Square implements Shape {
+class CanvasFactory{
 
-    @Override
-    public void draw(){
-        System.out.println("Inside Square::draw() method.");
-    }
-}
+    public Canvas getCanvas(String canvas){
 
-//Factory class
-class ShapeFactory {
-   //use getShape method to get object of type shape
-    public Shape getShape(String shapeType){
-        if(shapeType == null){
+        if(canvas == null)
             return null;
-        }
-        if(shapeType.equalsIgnoreCase("CIRCLE")){
-            return new Circle();
 
-        } else if(shapeType.equalsIgnoreCase("RECTANGLE")){
-            return new Rectangle();
+        if(canvas.equalsIgnoreCase("printer"))
+            return new PrinterCanvas();
 
-        } else if(shapeType.equalsIgnoreCase("SQUARE")){
-            return new Square();
-        }
+        else if(canvas.equalsIgnoreCase("screen"))
+            return new ScreenCanvas();
 
-        return null;
+        else
+            return null;
     }
+
 }
