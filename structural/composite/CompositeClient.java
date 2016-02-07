@@ -29,7 +29,7 @@ public class CompositeClient
         headMarketing.add(clerk2);
 
         System.out.println(CEO);
-/*
+
         for (Employee headEmployee : CEO.getSubordinates()) {
 
             System.out.println(headEmployee);
@@ -38,7 +38,7 @@ public class CompositeClient
 
                 System.out.println(employee);
             }
-        }*/
+        }
     }
 }
 
