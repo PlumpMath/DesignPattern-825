@@ -3,8 +3,8 @@ package composite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CompositeClient
-{
+public class CompositeClient{
+    
     public static void main(String[] args) {
 
         Employee CEO = new Employee("John","CEO", 30000);

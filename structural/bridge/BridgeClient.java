@@ -7,29 +7,49 @@ public class BridgeClient{
         Shape redCircle = new Circle(100,100,10,new RedCircle());
         Shape greenCircle = new Circle(100,100,10,new GreenCircle());
 
+        Shape redSquare = new Square(10,new GreenCircle());
+
         redCircle.draw();
-        greenCircle.draw(); 
+        greenCircle.draw();
+
+        redSquare.draw();
     }
 }
 
+//Implementazione
+
 interface DrawApi{
-    public void drawCircle(int radius,int x,int y);
+    public void drawShape(int radius,int x,int y);
+    public void drawShape(int l);
 }
 
 class RedCircle implements DrawApi{
 
     @Override
-    public void drawCircle(int radius, int x, int y) {
+    public void drawShape(int radius, int x, int y) {
         System.out.println("Drawing Circle[ color: red, radius: " + radius + ", x: " + x + ", " + y + "]");
+    }
+
+    @Override
+    public void drawShape(int l){
+        return;
     }
 }
 
 class GreenCircle implements DrawApi{
+
     @Override
-    public void drawCircle(int radius, int x, int y) {
+    public void drawShape(int radius, int x, int y) {
         System.out.println("Drawing Circle[ color: green, radius: " + radius + ", x: " + x + ", " + y + "]");
     }
+
+    @Override
+    public void drawShape(int l){
+        System.out.println("Drawing Square[ color: green, lato: "+l+"]");
+    }
 }
+
+//Astrazione
 
 abstract class Shape{
 
@@ -56,6 +76,21 @@ class Circle extends Shape{
 
     @Override
     public void draw(){
-        drawApi.drawCircle(radius,x,y);
+        drawApi.drawShape(radius,x,y);
+    }
+}
+
+class Square extends Shape{
+
+    private int l;
+
+    public Square(int l,DrawApi drawApi){
+        super(drawApi);
+        this.l = l;
+    }
+
+    @Override
+    public void draw(){
+        drawApi.drawShape(l);
     }
 }
