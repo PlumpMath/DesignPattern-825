@@ -72,7 +72,7 @@ class OctalObserver extends Observer{
 
     @Override
     public void update(){
-        System.out.println( "Binary String: " + Integer.toOctalString( subject.getState()));
+        System.out.println( "Octal String: " + Integer.toOctalString( subject.getState()));
     }
 }
 
@@ -85,6 +85,6 @@ class HexaObserver extends Observer{
 
     @Override
     public void update(){
-        System.out.println( "Binary String: " + Integer.toHexString( subject.getState()));
+        System.out.println( "Hexa String: " + Integer.toHexString( subject.getState()));
     }
 }

@@ -1,4 +1,4 @@
-package factorymehod;
+package factorymethod;
 
 public class FactoryMethodClient{
 
